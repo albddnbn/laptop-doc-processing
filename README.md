@@ -7,7 +7,4 @@ Download the project .zip folder. Then check your Python version (this script wa
 
 Install requirements.txt with pip: pip install -r requirements.txt
 
-OR
-
-The setup.ps1 script is a work in progress but it seemed like it worked correctly on my PC (I alreaday had the requirements installed, but it created the venv and activated it/etc.)
-
+* the setup.ps1 script is a work in progress
