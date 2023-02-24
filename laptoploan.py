@@ -46,7 +46,7 @@ class LaptopLoan:
             # one method for error checking the asset tag entry to make sure it has 7 digits and starts with 100-900
             tries = 0
             while True:
-                if re.match(r"\d00\d\d\d\d", asset):
+                if re.match(r"\d\d\d\d\d\d\d", asset):
                     break # break out of loop if asset tag entry matches the above regex pattern
                 # if the user has tried > 7 times to enter asset, add frown emoticon and directional arrow to request
                 elif tries < 7:
@@ -107,7 +107,7 @@ class LaptopLoan:
         # grab first sentence of the body/text of the base welcome doc
         first_sentence = self.welcome_doc.paragraphs[1]
         # The only variable text on the document
-        welcome_string = f"Dear {student_name}"
+        welcome_string = f"Dear {student_name[:-12]}"
         # rest of that chunk of text on the document
         rest_of_welcome = ": Welcome to Delaware Technical Community College!  This letter contains some helpful information pertaining to your laptop’s configuration of software and virtual support for assisting with technology issues."
 
