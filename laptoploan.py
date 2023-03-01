@@ -82,7 +82,7 @@ class LaptopLoan:
             # except for any error, then..
             except Exception:
                 # print(traceback.format_exc())
-                print(f"Something went wrong with printing the documents, but they should be saved under the student's name in the {os.path.basename(os.getcwd())} directory.")
+                print(f"Something went wrong with printing the documents, but they might be saved under the student's name in the {os.path.basename(os.getcwd())} directory.")
                 exit()
             # generate the email to send to student letting them know about laptop
             print('Generating text for notification email to student...')
