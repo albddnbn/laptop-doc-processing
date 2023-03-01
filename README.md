@@ -1,4 +1,4 @@
-# fluffy-octo-doc-creator
+# Laptop Loan document generation
 Takes user input of name and other details - creates 2 Word documents from them (agreement and welcome)
 
 ### Setup:
