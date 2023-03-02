@@ -8,7 +8,7 @@ import os
 import traceback
 import pyperclip
 import re # for error checking
-
+import time
 # ** DISCLAIMER ** --> This script WILL attempt to print the documents to your default printer if it runs w/o errors
 
 # font for inserted text
@@ -73,6 +73,9 @@ class LaptopLoan:
                 #print(traceback.format_exc())
                 print('\nOh no, something went wrong with creating the agreement document!')
                 exit()
+
+            # wait 2 seconds before trying to print
+            time.sleep(2)
 
             # print msg to console saying that files have been created
             #print(f'Sending {name}\'s documents to default printer...')
@@ -168,9 +171,11 @@ class LaptopLoan:
     def print_em(self):
         # print the welcome letter to default printer (only Windows compatible according to stackoverflow):
         os.startfile(self.welcome_filepath, "print")
-        # print agreement
-        os.startfile(self.agreement_filepath, "print")
-    
+        for printjob in range(2):
+            # print the agreement twice, once for student, once for IT
+            os.startfile(self.agreement_filepath, "print")
+            time.sleep(1)
+        
     # this function was more useful when OSTicket email responses were being maintenanced
     def gen_email_text(self, student_name):
         # copy email text to clipboard automatically as well, so if people use clipboard history then they can copy multiple/different student's emails to clipboard in one instance of the program:
